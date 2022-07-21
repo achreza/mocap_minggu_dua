@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_minggu_dua/Screens/profile.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Dashboard extends StatelessWidget {
@@ -13,10 +15,11 @@ class Dashboard extends StatelessWidget {
                 margin: EdgeInsets.only(top: 108),
                 child: Text(
                   "Selamat Datang",
-                  style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white),
+                  style: GoogleFonts.nunito(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white
+                  )
                 ))),
         Container(
           margin: EdgeInsets.only(top: 25),
@@ -25,7 +28,7 @@ class Dashboard extends StatelessWidget {
           child: Image.asset("assets/gambar1.png"),
         ),
         Container(
-            margin: EdgeInsets.fromLTRB(38, 370, 38, 22),
+            margin: EdgeInsets.fromLTRB(38, 100, 38, 22),
             child: Center(
               child: Text(
                 "Mari bekerja sama demi mengembangkan usaha mikro yang lebih berkembang.",
@@ -44,7 +47,11 @@ class Dashboard extends StatelessWidget {
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                            ))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return ProfilePage();
+                  },));
+                },
                 child: Text(
                   "Login",
                   style: TextStyle(color: HexColor("E98C23")),

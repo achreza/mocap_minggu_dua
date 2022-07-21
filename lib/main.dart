@@ -14,8 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Dashboard"),
+        ),
        backgroundColor: HexColor("F4BC1A"),
-        body: ProfilePage(),
+        body: Dashboard(),
       ),
     );
   }
